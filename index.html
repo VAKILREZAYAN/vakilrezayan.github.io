@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="وب‌سایت حقوقی سهند رضایان؛ مقالات، آموزش و آشنایی با قوانین ایران.">
+  <title>سهند رضایان | پایگاه حقوقی</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f5f7fa;
+      color: #172b3a;
+      line-height: 2;
+    }
+    header {
+      background: #102a43;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    header h2 { margin: 0; font-size: 22px; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 75px 8%;
+      background: linear-gradient(135deg, #102a43, #176b70);
+      color: white;
+      text-align: center;
+    }
+    .hero h1 { font-size: 36px; margin: 0 0 15px; }
+    .hero p { max-width: 700px; margin: 0 auto 25px; }
+    .button {
+      display: inline-block;
+      background: #d6b36a;
+      color: #102a43;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main { max-width: 1100px; margin: 45px auto; padding: 0 20px; }
+    .section-title { text-align: center; margin-bottom: 25px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #e1e8ef;
+      box-shadow: 0 4px 14px #102a430a;
+    }
+    .card h3 { color: #176b70; }
+    .about {
+      background: white;
+      padding: 28px;
+      border-radius: 10px;
+      margin-top: 35px;
+    }
+    footer {
+      text-align: center;
+      background: #102a43;
+      color: white;
+      padding: 22px;
+      margin-top: 50px;
+      font-size: 13px;
+    }
+    @media (max-width: 600px) {
+      header { justify-content: center; text-align: center; }
+      .hero { padding: 50px 6%; }
+      .hero h1 { font-size: 27px; }
+      nav a { display: inline-block; margin: 4px 7px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>سهند رضایان</h2>
+    <nav>
+      <a href="#home">صفحه اصلی</a>
+      <a href="#about">درباره</a>
+      <a href="#articles">مقالات حقوقی</a>
+      <a href="#contact">ارتباط</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>پایگاه حقوقی سهند رضایان</h1>
+    <p>
+      بستری برای آشنایی با قوانین، مطالعه مطالب حقوقی
+      و افزایش آگاهی درباره حقوق و تکالیف قانونی.
+    </p>
+    <a class="button" href="#articles">مطالعه مطالب حقوقی</a>
+  </section>
+
+  <main>
+    <section id="about" class="about">
+      <h2>درباره پایگاه حقوقی</h2>
+      <p>
+        این وب‌سایت با هدف انتشار مطالب آموزشی، معرفی قوانین
+        و فراهم‌کردن دسترسی آسان‌تر به محتوای حقوقی راه‌اندازی شده است.
+      </p>
+    </section>
+
+    <section id="articles" style="margin-top:40px">
+      <h2 class="section-title">بخش‌های حقوقی</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>حقوق مدنی</h3>
+          <p>مطالب آموزشی درباره قراردادها، تعهدات و مسئولیت مدنی.</p>
+        </article>
+        <article class="card">
+          <h3>حقوق جزا</h3>
+          <p>آشنایی با مفاهیم حقوق کیفری و قوانین مجازات اسلامی.</p>
+        </article>
+        <article class="card">
+          <h3>حقوق اداری</h3>
+          <p>مطالعه اصول حقوق اداری و روابط شهروندان با دستگاه‌های عمومی.</p>
+        </article>
+        <article class="card">
+          <h3>مقالات و یادداشت‌ها</h3>
+          <p>مطالب تحلیلی و آموزشی درباره موضوعات گوناگون حقوقی.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="about">
+      <h2>ارتباط با ما</h2>
+      <p>
+        راه‌های ارتباطی و اطلاعات تماس در این بخش درج خواهد شد.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© کلیه حقوق محتوای این وب‌سایت محفوظ است.</p>
+    <p>پایگاه حقوقی سهند رضایان</p>
+  </footer>
+</body>
+</html>
