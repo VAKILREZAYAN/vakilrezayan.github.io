@@ -4,150 +4,877 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="وب‌سایت حقوقی سهند رضایان؛ مقالات، آموزش و آشنایی با قوانین ایران.">
+  <meta name="theme-color" content="#10243a">
+  <meta name="description" content="پایگاه حقوقی سهند رضایان؛ مرجعی برای مطالعه مقالات، آموزش مفاهیم حقوقی و آشنایی با قوانین ایران.">
   <title>سهند رضایان | پایگاه حقوقی</title>
+
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --navy: #10243a;
+      --navy-light: #193650;
+      --gold: #c5a56a;
+      --gold-light: #e8d7b1;
+      --paper: #f8f7f3;
+      --white: #ffffff;
+      --ink: #253449;
+      --muted: #6e7886;
+      --line: #e6e2d8;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       margin: 0;
+      background: var(--paper);
+      color: var(--ink);
       font-family: Tahoma, Arial, sans-serif;
-      background: #f5f7fa;
-      color: #172b3a;
       line-height: 2;
     }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 91%);
+      margin-inline: auto;
+    }
+
+    .topline {
+      height: 4px;
+      background: var(--gold);
+    }
+
     header {
-      background: #102a43;
-      color: white;
-      padding: 18px 7%;
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid #ffffff17;
+    }
+
+    .header-inner {
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      gap: 24px;
+      padding-block: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
       gap: 12px;
-    }
-    header h2 { margin: 0; font-size: 22px; }
-    nav a {
-      color: white;
       text-decoration: none;
-      margin: 0 10px;
-      font-size: 14px;
+      flex-shrink: 0;
     }
-    .hero {
-      padding: 75px 8%;
-      background: linear-gradient(135deg, #102a43, #176b70);
-      color: white;
-      text-align: center;
-    }
-    .hero h1 { font-size: 36px; margin: 0 0 15px; }
-    .hero p { max-width: 700px; margin: 0 auto 25px; }
-    .button {
-      display: inline-block;
-      background: #d6b36a;
-      color: #102a43;
-      padding: 10px 24px;
-      border-radius: 6px;
-      text-decoration: none;
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      border-radius: 8px;
       font-weight: bold;
     }
-    main { max-width: 1100px; margin: 45px auto; padding: 0 20px; }
-    .section-title { text-align: center; margin-bottom: 25px; }
-    .cards {
+
+    .brand-name {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: #cbd4df;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 13px;
+      text-decoration: none;
+      color: #e5eaf0;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-contact {
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      padding: 5px 13px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 12% 15%, #c5a56a18, transparent 38%),
+        linear-gradient(120deg, #10243a, #193650);
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -100px;
+      bottom: -180px;
+      width: 390px;
+      height: 390px;
+      border: 1px solid #c5a56a35;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      min-height: 400px;
+      padding-block: 74px 78px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 12px;
+      letter-spacing: .4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4vw, 47px);
+      line-height: 1.65;
+      margin: 16px 0;
+      font-weight: bold;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: #d8e0e8;
+      font-size: 15px;
+      line-height: 2.4;
+      margin: 0 0 26px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 45px;
+      padding: 9px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-gold {
+      color: var(--navy);
+      background: var(--gold-light);
+    }
+
+    .button-outline {
+      color: white;
+      border: 1px solid #ffffff65;
+    }
+
+    .intro-strip {
+      background: white;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-inner {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .intro-item {
+      padding: 22px 18px;
+      text-align: center;
+      border-left: 1px solid var(--line);
+    }
+
+    .intro-item:last-child {
+      border-left: 0;
+    }
+
+    .intro-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .intro-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    section.content-section {
+      padding-block: 68px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading .eyebrow {
+      color: #8a6b35;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(23px, 3vw, 30px);
+      margin: 8px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .about-copy {
+      padding: 12px 0;
+    }
+
+    .about-copy h3 {
+      font-size: 21px;
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    .about-copy p {
+      color: #566273;
+      font-size: 14px;
+    }
+
+    .principles {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .principle {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding-block: 12px;
+      border-bottom: 1px solid #efede7;
+    }
+
+    .principle:last-child {
+      border-bottom: 0;
+    }
+
+    .principle-symbol {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #8b6a32;
+      background: #f4eee1;
+      font-size: 18px;
+    }
+
+    .principle strong {
+      display: block;
+      font-size: 13px;
+      color: var(--navy);
+    }
+
+    .principle p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .law-section {
+      background: #f0eee7;
+    }
+
+    .law-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .law-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid #e4e0d5;
+      border-radius: 10px;
+      padding: 23px 20px;
+      min-height: 225px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .law-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px #10243a0d;
+    }
+
+    .law-number {
+      color: #a48348;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .law-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin: 8px 0;
+    }
+
+    .law-card p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0 0 15px;
+      flex: 1;
+    }
+
+    .text-link {
+      text-decoration: none;
+      color: #8a6b35;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .text-link span {
+      padding-right: 5px;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-    .card {
+
+    .article-card {
       background: white;
-      padding: 25px;
+      border: 1px solid var(--line);
       border-radius: 10px;
-      border: 1px solid #e1e8ef;
-      box-shadow: 0 4px 14px #102a430a;
+      overflow: hidden;
     }
-    .card h3 { color: #176b70; }
-    .about {
-      background: white;
-      padding: 28px;
-      border-radius: 10px;
-      margin-top: 35px;
+
+    .article-top {
+      height: 8px;
+      background: var(--navy-light);
     }
-    footer {
+
+    .article-body {
+      padding: 23px;
+    }
+
+    .article-category {
+      color: #8a6b35;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .article-card h3 {
+      font-size: 16px;
+      color: var(--navy);
+      line-height: 1.9;
+      margin: 10px 0;
+    }
+
+    .article-card p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .article-note {
+      margin-top: 22px;
+      font-size: 11px;
+      color: var(--muted);
       text-align: center;
-      background: #102a43;
+    }
+
+    .about-banner {
+      background: var(--navy);
       color: white;
-      padding: 22px;
-      margin-top: 50px;
+      border-radius: var(--radius);
+      padding: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .about-banner h2 {
+      margin: 0 0 8px;
+      font-size: 23px;
+    }
+
+    .about-banner p {
+      margin: 0;
+      color: #d5dce4;
+      font-size: 13px;
+      max-width: 650px;
+    }
+
+    .contact-panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .contact-panel h3 {
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
       font-size: 13px;
     }
-    @media (max-width: 600px) {
-      header { justify-content: center; text-align: center; }
-      .hero { padding: 50px 6%; }
-      .hero h1 { font-size: 27px; }
-      nav a { display: inline-block; margin: 4px 7px; }
+
+    footer {
+      background: #0b1a2b;
+      color: #dce2e9;
+      padding: 32px 0 18px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 22px;
+    }
+
+    .footer-main strong {
+      color: var(--gold-light);
+    }
+
+    .footer-main p {
+      color: #b9c4d0;
+      font-size: 12px;
+      max-width: 450px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    .footer-links a {
+      color: #dce2e9;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .copyright {
+      border-top: 1px solid #ffffff1c;
+      padding-top: 15px;
+      text-align: center;
+      color: #aeb8c4;
+      font-size: 11px;
+    }
+
+    @media (max-width: 850px) {
+      .header-inner {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .law-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-inner {
+        min-height: 350px;
+        padding-block: 52px;
+      }
+
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .intro-item {
+        padding: 16px 7px;
+      }
+
+      .intro-item strong {
+        font-size: 11px;
+      }
+
+      .intro-item span {
+        font-size: 10px;
+      }
+
+      section.content-section {
+        padding-block: 46px;
+      }
+
+      .law-grid,
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .law-card {
+        min-height: 190px;
+      }
+
+      .about-banner,
+      .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .about-banner {
+        padding: 25px;
+      }
+
+      .contact-panel {
+        padding: 22px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <div class="topline"></div>
+
   <header>
-    <h2>سهند رضایان</h2>
-    <nav>
-      <a href="#home">صفحه اصلی</a>
-      <a href="#about">درباره</a>
-      <a href="#articles">مقالات حقوقی</a>
-      <a href="#contact">ارتباط</a>
-    </nav>
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="صفحه اصلی">
+        <span class="brand-mark">ح</span>
+        <span>
+          <span class="brand-name">سهند رضایان</span>
+          <span class="brand-subtitle">پایگاه دانش و مطالعات حقوقی</span>
+        </span>
+      </a>
+
+      <nav aria-label="منوی اصلی">
+        <a href="#home">صفحه اصلی</a>
+        <a href="#about">درباره پایگاه</a>
+        <a href="#fields">حوزه‌های حقوقی</a>
+        <a href="#articles">مقالات</a>
+        <a class="nav-contact" href="#contact">ارتباط</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero" id="home">
-    <h1>پایگاه حقوقی سهند رضایان</h1>
-    <p>
-      بستری برای آشنایی با قوانین، مطالعه مطالب حقوقی
-      و افزایش آگاهی درباره حقوق و تکالیف قانونی.
-    </p>
-    <a class="button" href="#articles">مطالعه مطالب حقوقی</a>
-  </section>
-
   <main>
-    <section id="about" class="about">
-      <h2>درباره پایگاه حقوقی</h2>
-      <p>
-        این وب‌سایت با هدف انتشار مطالب آموزشی، معرفی قوانین
-        و فراهم‌کردن دسترسی آسان‌تر به محتوای حقوقی راه‌اندازی شده است.
-      </p>
-    </section>
-
-    <section id="articles" style="margin-top:40px">
-      <h2 class="section-title">بخش‌های حقوقی</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>حقوق مدنی</h3>
-          <p>مطالب آموزشی درباره قراردادها، تعهدات و مسئولیت مدنی.</p>
-        </article>
-        <article class="card">
-          <h3>حقوق جزا</h3>
-          <p>آشنایی با مفاهیم حقوق کیفری و قوانین مجازات اسلامی.</p>
-        </article>
-        <article class="card">
-          <h3>حقوق اداری</h3>
-          <p>مطالعه اصول حقوق اداری و روابط شهروندان با دستگاه‌های عمومی.</p>
-        </article>
-        <article class="card">
-          <h3>مقالات و یادداشت‌ها</h3>
-          <p>مطالب تحلیلی و آموزشی درباره موضوعات گوناگون حقوقی.</p>
-        </article>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">دانش حقوقی؛ آگاهی و تحلیل</span>
+          <h1>به پایگاه حقوقی<br><span>سهند رضایان</span> خوش آمدید</h1>
+          <p>
+            فضایی برای مطالعه قوانین، آشنایی با مفاهیم حقوقی
+            و دسترسی به مطالب آموزشی و تحلیلی در حوزه‌های گوناگون حقوق.
+          </p>
+          <div class="actions">
+            <a class="button button-gold" href="#articles">مطالعه مقالات</a>
+            <a class="button button-outline" href="#fields">آشنایی با حوزه‌های حقوقی</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="about">
-      <h2>ارتباط با ما</h2>
-      <p>
-        راه‌های ارتباطی و اطلاعات تماس در این بخش درج خواهد شد.
-      </p>
+    <div class="intro-strip">
+      <div class="container intro-inner">
+        <div class="intro-item">
+          <strong>آموزش حقوقی</strong>
+          <span>آشنایی با مفاهیم و اصطلاحات</span>
+        </div>
+        <div class="intro-item">
+          <strong>مطالعه قوانین</strong>
+          <span>شناخت ساختار و مقررات حقوقی</span>
+        </div>
+        <div class="intro-item">
+          <strong>تحلیل و پژوهش</strong>
+          <span>نگاهی روشمند به مسائل حقوقی</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="content-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy">
+            <span class="eyebrow">درباره پایگاه</span>
+            <h3>حقوق را دقیق‌تر بشناسیم</h3>
+            <p>
+              پایگاه حقوقی سهند رضایان با هدف فراهم‌کردن بستری
+              برای انتشار مطالب آموزشی، معرفی مفاهیم قانونی و
+              ارائه محتوای تحلیلی در زمینه حقوق ایجاد شده است.
+            </p>
+            <p>
+              تلاش این پایگاه، کمک به فهم روشن‌تر مفاهیم حقوقی،
+              آشنایی با قوانین و دسترسی آسان‌تر به مطالب مرتبط
+              برای دانشجویان، پژوهشگران و علاقه‌مندان است.
+            </p>
+          </div>
+
+          <div class="principles">
+            <div class="principle">
+              <span class="principle-symbol">§</span>
+              <div>
+                <strong>دقت در مطالب</strong>
+                <p>توجه به متن قوانین و منابع معتبر حقوقی.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <span class="principle-symbol">◈</span>
+              <div>
+                <strong>بیان روشن</strong>
+                <p>توضیح موضوعات حقوقی با زبانی قابل فهم.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <span class="principle-symbol">◇</span>
+              <div>
+                <strong>رویکرد پژوهشی</strong>
+                <p>توجه به تحلیل، مطالعه و استناد به منابع.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section law-section" id="fields">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">زمینه‌های مطالعاتی</span>
+          <h2>حوزه‌های حقوقی</h2>
+          <p>
+            با حوزه‌های اصلی مطالعات حقوقی آشنا شوید و موضوع مورد
+            علاقه خود را برای مطالعه انتخاب کنید.
+          </p>
+        </div>
+
+        <div class="law-grid">
+          <article class="law-card">
+            <span class="law-number">01 / CIVIL LAW</span>
+            <h3>حقوق مدنی</h3>
+            <p>قواعد مربوط به اشخاص، اموال، قراردادها، تعهدات و مسئولیت مدنی.</p>
+            <a class="text-link" href="#articles">مطالب مرتبط <span>←</span></a>
+          </article>
+
+          <article class="law-card">
+            <span class="law-number">02 / CRIMINAL LAW</span>
+            <h3>حقوق جزا</h3>
+            <p>مفاهیم جرم، مسئولیت کیفری، مجازات‌ها و اصول حقوق کیفری.</p>
+            <a class="text-link" href="#articles">مطالب مرتبط <span>←</span></a>
+          </article>
+
+          <article class="law-card">
+            <span class="law-number">03 / ADMINISTRATIVE LAW</span>
+            <h3>حقوق اداری</h3>
+            <p>اصول حاکم بر اداره عمومی، تصمیمات اداری و حقوق شهروندان.</p>
+            <a class="text-link" href="#articles">مطالب مرتبط <span>←</span></a>
+          </article>
+
+          <article class="law-card">
+            <span class="law-number">04 / PRIVATE INTERNATIONAL LAW</span>
+            <h3>حقوق بین‌الملل خصوصی</h3>
+            <p>مسائل تابعیت، تعارض قوانین و روابط حقوقی دارای عنصر خارجی.</p>
+            <a class="text-link" href="#articles">مطالب مرتبط <span>←</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="articles">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">کتابخانه حقوقی</span>
+          <h2>مقالات و یادداشت‌ها</h2>
+          <p>
+            این بخش برای انتشار تدریجی مقالات آموزشی، یادداشت‌های
+            پژوهشی و بررسی موضوعات حقوقی در نظر گرفته شده است.
+          </p>
+        </div>
+
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-top"></div>
+            <div class="article-body">
+              <span class="article-category">حقوق مدنی</span>
+              <h3>آشنایی با قراردادها و آثار حقوقی آن‌ها</h3>
+              <p>
+                بررسی مقدماتی مفهوم قرارداد، شرایط اساسی صحت معاملات
+                و اهمیت تعهدات قراردادی.
+              </p>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-top"></div>
+            <div class="article-body">
+              <span class="article-category">حقوق جزا</span>
+              <h3>مبانی مسئولیت کیفری در حقوق ایران</h3>
+              <p>
+                آشنایی مقدماتی با مفهوم مسئولیت کیفری و جایگاه آن
+                در نظام حقوقی ایران.
+              </p>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-top"></div>
+            <div class="article-body">
+              <span class="article-category">حقوق اداری</span>
+              <h3>اصول حاکم بر حقوق اداری</h3>
+              <p>
+                مروری مقدماتی بر جایگاه قانون، صلاحیت مراجع اداری
+                و حقوق شهروندان.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="article-note">
+          این موارد نمونه‌های معرفی موضوع هستند؛ برای انتشار مقاله کامل،
+          محتوای مستند و منابع مربوط باید جداگانه تهیه و بررسی شوند.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="about-banner">
+          <div>
+            <h2>درباره نویسنده و صاحب پایگاه</h2>
+            <p>
+              در این قسمت، معرفی حرفه‌ای سهند رضایان، سوابق تحصیلی،
+              زمینه‌های تخصصی و فعالیت‌های پژوهشی درج خواهد شد.
+            </p>
+          </div>
+          <a class="button button-gold" href="#contact">بخش ارتباط</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <span class="eyebrow">راه‌های ارتباطی</span>
+          <h3>ارتباط با پایگاه حقوقی</h3>
+          <p>
+            اطلاعات تماس و سایر راه‌های ارتباطی پس از تأیید و دریافت
+            اطلاعات مربوط، در این بخش قرار خواهد گرفت.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© کلیه حقوق محتوای این وب‌سایت محفوظ است.</p>
-    <p>پایگاه حقوقی سهند رضایان</p>
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <strong>پایگاه حقوقی سهند رضایان</strong>
+          <p>
+            فضایی برای آموزش، مطالعه و آشنایی با موضوعات و مفاهیم حقوقی.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">صفحه اصلی</a>
+          <a href="#about">درباره پایگاه</a>
+          <a href="#fields">حوزه‌های حقوقی</a>
+          <a href="#articles">مقالات</a>
+          <a href="#contact">ارتباط</a>
+        </div>
+      </div>
+      <div class="copyright">
+        © کلیه حقوق محتوای منتشرشده متعلق به صاحبان قانونی آن است.
+        <br>
+        پایگاه حقوقی سهند رضایان
+      </div>
+    </div>
   </footer>
 </body>
 </html>
